@@ -17,8 +17,8 @@ app.use('/users', userRoutes);
 
 // Global Error Handler
 app.use((err, req, res, next) => {
-  console.error(err);
-  res.status(500).json({ error: err.message || 'Internal Server Error' });
+    res.json({ error: err.message });
 });
+
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
